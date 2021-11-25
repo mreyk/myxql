@@ -59,10 +59,11 @@ defmodule MyXQL.Connection do
     {:ok, state}
   end
 
-  @impl true
-  def checkin(state) do
-    {:ok, state}
-  end
+  # Not implemented in db_connection
+  # @impl true
+  # def checkin(state) do
+  #   {:ok, state}
+  # end
 
   @impl true
   def handle_prepare(query, opts, state) do

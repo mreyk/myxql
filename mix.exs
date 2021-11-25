@@ -8,7 +8,7 @@ defmodule MyXQL.MixProject do
     [
       app: :myxql,
       version: @version,
-      elixir: "~> 1.6",
+      elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       name: "MyXQL",
       description: "MySQL 5.5+ driver for Elixir",
@@ -45,14 +45,14 @@ defmodule MyXQL.MixProject do
 
   defp deps() do
     [
-      {:db_connection, "~> 2.0", db_connection_opts()},
-      {:decimal, "~> 1.6 or ~> 2.0"},
-      {:jason, "~> 1.0", optional: true},
-      {:geo, "~> 3.3", optional: true},
-      {:binpp, ">= 0.0.0", only: [:dev, :test]},
-      {:dialyxir, "~> 1.0", only: :dev, runtime: false},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:benchee, ">= 0.0.0", only: :dev, runtime: false}
+      {:db_connection, "~> 2.4.1", db_connection_opts()},
+      {:decimal, "~> 2.0.0"},
+      {:jason, github: "michalmuskala/jason", ref: "df949728f9e3b36289329ae364b6f9738dd3ad34", optional: true, override: true},
+      {:geo, "~> 3.4.2", optional: true},
+      {:binpp, "~> 1.1.1", only: [:dev, :test]},
+      {:dialyxir, "~> 1.1.0", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.23.0", only: :dev, runtime: false},
+      {:benchee, "~> 1.0.1", only: :dev, runtime: false}
     ]
   end
 
